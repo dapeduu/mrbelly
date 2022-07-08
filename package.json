@@ -25,6 +25,7 @@
     "nodemon": "^2.0.19",
     "npm-run-all": "^4.1.5",
     "rimraf": "^3.0.2",
+    "tailwindcss": "^3.1.5",
     "typescript": "^4.7.4",
     "watch-run": "^1.2.5"
   },
@@ -33,6 +34,7 @@
     "copy-files": "copyfiles -u 1 src/**/*.pug src/**/*.css dist/",
     "pre-build": "yarn clean && yarn copy-files",
     "dev:files": "yarn watch-run -p src/**/*.pug yarn copy-files",
+    "dev:styles": "npx tailwindcss -i ./src/views/styles.css -o ./dist/views/output.css --watch",
     "dev:tsc": "tsc --watch -p .",
     "dev:serve": "nodemon -e js,pug -w dist dist/main.js",
     "dev": "yarn pre-build && run-p dev:*"

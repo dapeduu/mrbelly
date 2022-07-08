@@ -7,7 +7,7 @@
     /* Visit https://aka.ms/tsconfig to read more about this file */
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDir": "./src"
 
     /* Projects */

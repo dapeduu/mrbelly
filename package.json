@@ -1,7 +1,7 @@
 {
   "name": "mrbelly",
   "version": "1.0.0",
-  "main": "lib/main.js",
+  "main": "dist/main.js",
   "license": "MIT",
   "dependencies": {
     "@hapi/hapi": "^20.2.2",
@@ -29,12 +29,12 @@
     "watch-run": "^1.2.5"
   },
   "scripts": {
-    "clean": "rimraf lib/",
-    "copy-files": "copyfiles -u 1 src/**/*.pug src/**/*.css lib/",
+    "clean": "rimraf dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.pug src/**/*.css dist/",
     "pre-build": "yarn clean && yarn copy-files",
     "dev:files": "yarn watch-run -p src/**/*.pug yarn copy-files",
     "dev:tsc": "tsc --watch -p .",
-    "dev:serve": "nodemon -e js,pug -w lib lib/main.js",
-    "dev": "run-p dev:*"
+    "dev:serve": "nodemon -e js,pug -w dist dist/main.js",
+    "dev": "yarn pre-build && run-p dev:*"
   }
 }
